@@ -8,7 +8,7 @@ downloader = Downloader()
 
 all_subcategories = []
 counter = 0
-for category, name in categories[2:]:
+for category, name in categories:
     subcategories_json = requests.get('https://www.customink.com/clipart/clipart_categories/{}.json?all=true'.format(category)).json()
     subcategories = [subcategory['id'] for subcategory in subcategories_json['_embedded']['children']]
     # all_subcategories.extend(subcategories)
