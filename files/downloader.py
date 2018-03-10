@@ -60,8 +60,8 @@ class Downloader:
         file_size = int(headers['content-length'])
         self.size += file_size
 
-        print "Downloading: %s Bytes: %s" % (file_name, file_size)
-        print 'TOTAL: ' + str(self.size)
+        # print "Downloading: %s Bytes: %s" % (file_name, file_size)
+        print 'TOTAL({}): '.format(file_route) + str(self.size)
 
         with open(final_file_name, 'wb') as f:
             for chunk in r.iter_content(chunk_size=1024):
