@@ -22,8 +22,10 @@ for category, name in categories:
                     url = 'https://clipart-manipulate.out.customink.com/prod/manipulate?height=2500&width=2500&red=0&green=0&blue=0&clipart_id={}&path=%2Fclipart%2Feps%2F&fV=false&fH=false&lockRatio=true&transparent=true&grayscale=false&blackwhite=false&rotate=0'.format(item)
                     downloader.download_file_category(url, name, item)
                 except:
+                    print 'Skipped item'
                     continue
         except:
+            print 'Skipped subcategory'
             continue
         # all_items.extend(items)
     counter += 1
