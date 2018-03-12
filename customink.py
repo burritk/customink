@@ -7,6 +7,12 @@ categories = [(category['id'], '-'.join(category['name'].split('/'))) for catego
 
 downloader = Downloader()
 
+try:
+    res = sys.argv[1]
+except:
+    res = '2500'
+print 'Downloading files in {0}x{1} resolution'.format(res, res)
+
 all_subcategories = []
 counter = 0
 for category, name in categories:
@@ -20,11 +26,6 @@ for category, name in categories:
             for index, item in enumerate(items):
                 try:
                     print '{0}/{1} C, {2}/{3} SC, {4}/{5} I'.format(counter, len(categories), sindex, len(subcategories), index, len(items)),
-                    try:
-                        res = sys.argv[1]
-                    except:
-                        res = '2500'
-                    print 'Downloading files in {0}x{1} resolution'.format(res, res)
                     url = 'https://clipart-manipulate.out.customink.com/prod/manipulate?height={0}&width={1}&red=0&green=0&blue=0&clipart_id={2}&path=%2Fclipart%2Feps%2F&fV=false&fH=false&lockRatio=true&transparent=true&grayscale=false&blackwhite=false&rotate=0'.format(res, res, item)
                     downloader.download_file_category(url, name, item)
                 except:
