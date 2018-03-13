@@ -12,11 +12,11 @@ subcategory_start = 0
 item_start = 0
 try: res = sys.argv[1]
 except: pass
-try: category_start = sys.argv[2]
+try: category_start = int(sys.argv[2])
 except: pass
-try: subcategory_start = sys.argv[3]
+try: subcategory_start = int(sys.argv[3])
 except: pass
-try: item_start = sys.argv[4]
+try: item_start = int(sys.argv[4])
 except: pass
 print 'Downloading files in {0}x{1} resolution'.format(res, res)
 
