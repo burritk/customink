@@ -40,10 +40,12 @@ for category, name in categories[category_start:]:
                 except:
                     print 'Skipped item'
                     continue
+                item_counter += 1
             item_start = 0
         except:
             print 'Skipped subcategory'
             continue
+        subcategory_counter += 1
         # all_items.extend(items)
     subcategory_start = 0
     category_counter += 1
